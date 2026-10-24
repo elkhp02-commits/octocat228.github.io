@@ -1,0 +1,73 @@
+.wordmark {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-family: var(--sans);
+  font-size: calc(14px * var(--scale, 1));
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+  background: var(--card);
+  color: var(--ink);
+}
+.btn:disabled { background: var(--line); color: var(--muted2); cursor: not-allowed; }
+.btn--primary { background: var(--ink); color: var(--bg); }
+.btn--primary:hover:not(:disabled) { background: var(--muted); }
+.btn--gold { background: var(--gold); color: #fff; }
+.btn--gold:hover:not(:disabled) { background: var(--gold-dark); }
+.btn--outline { border-color: var(--line-dark); }
+.btn--outline:hover:not(:disabled) { background: var(--sel-bg); }
+.btn--ghost { background: transparent; color: var(--muted); }
+.btn--ghost:hover:not(:disabled) { color: var(--ink); }
+.btn--danger { background: var(--danger-bg); color: var(--danger-fg); border-color: var(--danger-line); }
+.btn--sm { padding: 7px 12px; font-size: calc(12px * var(--scale, 1)); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.segmented {
+  display: flex;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 6px 0 14px;
+}
+.segmented button {
+  flex: 1;
+  padding: 11px 10px;
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: calc(13px * var(--scale, 1));
+  cursor: pointer;
+}
+.segmented button.is-on { background: var(--ink); color: var(--bg); font-weight: 700; }
+
+.progress { height: 3px; background: var(--line); border-radius: 2px; margin: 12px 0 20px; }
+.progress__bar { height: 100%; background: var(--gold); border-radius: 2px; transition: width .3s; }
+
+.rule { height: 1px; background: var(--line); margin: 12px 0; }
+
+.section { margin: 20px 0 8px; }
+.section__title { font-family: var(--serif); font-size: calc(18px * var(--scale, 1)); font-weight: bold; }
+.section__line { width: 32px; height: 2px; background: var(--gold); margin-top: 5px; }
