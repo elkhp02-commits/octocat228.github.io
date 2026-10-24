@@ -1,0 +1,95 @@
+:root {
+    --scale: 1;
+  --bg: #F5F3FF;
+  --card: #FFFFFF;
+  --ink: #211A35;
+  --muted: #716A86;
+  --muted2: #A39CB8;
+  --line: #E5E0F2;
+  --line-dark: #BDB2E2;
+  --gold: #7452F5;
+  --gold-dark: #5938D8;
+  --sel-bg: #EEE9FF;
+  --tile: #F0FBE3;
+  --hero-bg: #F3EFFF;
+  --hero-fg: #211A35;
+  --hero-muted: #716A86;
+  --hero-line: #D5CCF0;
+  --danger-bg: #FFF0F0;
+  --danger-fg: #C0392B;
+  --danger-line: #F5C6C6;
+  --radius: 10px;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Tahoma, Verdana, "Segoe UI", Arial, sans-serif;
+  --mono: Consolas, "Courier New", monospace;
+}
+
+[data-theme="dark"] {
+  --bg: #141018;
+  --card: #1F1830;
+  --ink: #F3EEFF;
+  --muted: #BCB0D6;
+  --muted2: #8A7EA8;
+  --line: #3A2F4D;
+  --line-dark: #6D5A9E;
+  --gold: #B79CFF;
+  --gold-dark: #9A7BF0;
+  --sel-bg: #322648;
+  --tile: #2A2038;
+  --hero-bg: #2A2038;
+  --hero-fg: #F7F4FF;
+  --hero-muted: #B0A1CE;
+  --hero-line: #4A3E66;
+  --danger-bg: #3A1C1C;
+  --danger-fg: #FF8A8A;
+  --danger-line: #5A2A2A;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  font-size: calc(15px * var(--scale, 1));
+  transition: background .2s, color .2s;
+}
+
+#app { max-width: 760px; margin: 0 auto; padding: 24px; }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: bold; line-height: 1.15; }
+h1 { font-size: calc(40px * var(--scale, 1)); }
+h2 { font-size: calc(26px * var(--scale, 1)); }
+h3 { font-size: calc(18px * var(--scale, 1)); }
+
+.mono { font-family: var(--mono); }
+.muted { color: var(--muted); }
+.muted2 { color: var(--muted2); }
+.gold { color: var(--gold); }
+
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  #app {
+    padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
+  }
+  h1 { font-size: calc(32px * var(--scale, 1)); }
+  h2 { font-size: calc(22px * var(--scale, 1)); }
+  .btn { padding: 13px 16px; font-size: calc(15px * var(--scale, 1)); }
+  .footer-actions {
+    position: sticky;
+    bottom: 0;
+    background: var(--bg);
+    padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -8px 16px -12px rgba(0,0,0,.25);
+  }
+}
+
+@media (max-width: 380px) {
+  .segmented { flex-wrap: wrap; }
+  .segmented button { flex: 1 1 50%; }
+}
